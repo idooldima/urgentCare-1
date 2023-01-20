@@ -8,7 +8,7 @@ function sendMail() {
 
   const CERVICE_ID = "service_6g4b9sf";
   const TEMPLETE_ID = "template_fnlcymh";
-  if (!!capcha) {
+  if (!!captcha) {
     emailjs
       .send(CERVICE_ID, TEMPLETE_ID, data)
       .then((res) => {
