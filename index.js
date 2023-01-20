@@ -1,14 +1,17 @@
+let loader = document.getElementById("loader");
+console.log(loader);
 function sendMail() {
-  let captcha = grecaptcha.getResponse();
-  console.log(captcha);
-  let data = {
-    name: document.getElementById("name").value,
-    "g-recaptcha-response": captcha,
-  };
-
   const CERVICE_ID = "service_6g4b9sf";
   const TEMPLETE_ID = "template_fnlcymh";
+
+  let captcha = grecaptcha.getResponse();
   if (!!captcha) {
+    loader.classList.add("show-loader");
+    let data = {
+      name: document.getElementById("name").value,
+      "g-recaptcha-response": captcha,
+    };
+
     emailjs
       .send(CERVICE_ID, TEMPLETE_ID, data)
       .then((res) => {
@@ -16,7 +19,10 @@ function sendMail() {
         console.log(res);
       })
       .then(() => grecaptcha.reset())
-      .catch((err) => console.log(err));
+      .then(() => loader.classList.remove("show-loader"))
+      .catch((err) => {
+        console.log(err);
+      });
   } else {
     console.log("Please capcha");
   }
