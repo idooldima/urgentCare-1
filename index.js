@@ -1,5 +1,6 @@
 let loader = document.getElementById("loader");
-console.log(loader);
+let recaptchaError = document.getElementById("recaptcha-error");
+
 function sendMail() {
   const CERVICE_ID = "service_6g4b9sf";
   const TEMPLETE_ID = "template_fnlcymh";
@@ -8,6 +9,7 @@ function sendMail() {
 
   loader.classList.add("show-loader");
   document.getElementById("overlay").style.display = "block";
+  recaptchaError.classList.remove("show-recaptcha-error");
   let data = {
     name: document.getElementById("name").value,
     "g-recaptcha-response": captcha,
@@ -31,5 +33,6 @@ function sendMail() {
     console.log("Please capcha");
     loader.classList.remove("show-loader");
     document.getElementById("overlay").style.display = "none";
+    recaptchaError.classList.add("show-recaptcha-error");
   }
 }
