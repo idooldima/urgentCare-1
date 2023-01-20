@@ -7,6 +7,7 @@ function sendMail() {
   let captcha = grecaptcha.getResponse();
 
   loader.classList.add("show-loader");
+  document.getElementById("overlay").style.display = "block";
   let data = {
     name: document.getElementById("name").value,
     "g-recaptcha-response": captcha,
@@ -19,12 +20,16 @@ function sendMail() {
         console.log(res);
       })
       .then(() => grecaptcha.reset())
-      .then(() => loader.classList.remove("show-loader"))
+      .then(() => {
+        loader.classList.remove("show-loader");
+        document.getElementById("overlay").style.display = "block";
+      })
       .catch((err) => {
         console.log(err);
       });
   } else {
     console.log("Please capcha");
     loader.classList.remove("show-loader");
+    document.getElementById("overlay").style.display = "block";
   }
 }
