@@ -1,5 +1,6 @@
 function sendMail() {
   let captcha = grecaptcha.getResponse();
+  console.log(captcha);
   let data = {
     name: document.getElementById("name").value,
     "g-recaptcha-response": captcha,
