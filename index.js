@@ -14,5 +14,6 @@ function sendMail() {
       document.getElementById("name").value = "";
       console.log(res);
     })
+    .then(() => grecaptcha.reset())
     .catch((err) => console.log(err));
 }
