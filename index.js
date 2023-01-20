@@ -1,8 +1,10 @@
 function sendMail() {
   let data = {
     name: document.getElementById("name").value,
+    "g-recaptcha-response": "",
   };
-
+  let captcha = grecaptcha.getResponse();
+  console.log(captcha);
   const CERVICE_ID = "service_6g4b9sf";
   const TEMPLETE_ID = "template_fnlcymh";
 
