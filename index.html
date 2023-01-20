@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/style.css" />
-
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
@@ -136,7 +136,7 @@
           <div></div>
         </div>
         <div class="form-container">
-          <form class="form-box" id="contact_form">
+          <form class="form-box" id="contact_form" action="?" method="POST">
             <div>
               <span>Name</span>
               <input id="name" placeholder="Name" class="input-simple" />
@@ -168,7 +168,10 @@
                 <button class="button">Browse</button>
               </div>
             </div> -->
-            <div onclick="sendMail()">
+            <div
+              onclick="sendMail()"
+              data-sitekey="6LfhNhQkAAAAAKD-Rwd6HtP-l9-r235apUkcbOx-"
+            >
               <!-- <input
                 type="submit"
                 class="button background-button"
@@ -176,6 +179,14 @@
               /> -->
               Send Message
             </div>
+          </form>
+          <form action="?" method="POST">
+            <div
+              class="g-recaptcha"
+              data-sitekey="6LfhNhQkAAAAAKD-Rwd6HtP-l9-r235apUkcbOx-"
+            ></div>
+            <br />
+            <input type="submit" value="Submit" />
           </form>
         </div>
       </div>
