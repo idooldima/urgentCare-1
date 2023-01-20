@@ -21,14 +21,6 @@ body {
   text-transform: uppercase;
 }
 
-.loader {
-  display: none;
-}
-
-.show-loader {
-  display: block;
-}
-
 .fat {
   font-weight: 600;
 }

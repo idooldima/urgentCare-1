@@ -5,13 +5,13 @@ function sendMail() {
   const TEMPLETE_ID = "template_fnlcymh";
 
   let captcha = grecaptcha.getResponse();
-  if (!!captcha) {
-    loader.classList.add("show-loader");
-    let data = {
-      name: document.getElementById("name").value,
-      "g-recaptcha-response": captcha,
-    };
 
+  loader.classList.add("show-loader");
+  let data = {
+    name: document.getElementById("name").value,
+    "g-recaptcha-response": captcha,
+  };
+  if (!!captcha) {
     emailjs
       .send(CERVICE_ID, TEMPLETE_ID, data)
       .then((res) => {
@@ -25,5 +25,6 @@ function sendMail() {
       });
   } else {
     console.log("Please capcha");
+    loader.classList.remove("show-loader");
   }
 }
