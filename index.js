@@ -22,7 +22,7 @@ function sendMail() {
       .then(() => grecaptcha.reset())
       .then(() => {
         loader.classList.remove("show-loader");
-        document.getElementById("overlay").style.display = "block";
+        document.getElementById("overlay").style.display = "none";
       })
       .catch((err) => {
         console.log(err);
@@ -30,6 +30,6 @@ function sendMail() {
   } else {
     console.log("Please capcha");
     loader.classList.remove("show-loader");
-    document.getElementById("overlay").style.display = "block";
+    document.getElementById("overlay").style.display = "none";
   }
 }
