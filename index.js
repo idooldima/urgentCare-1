@@ -2,6 +2,7 @@ let loader = document.getElementById("loader");
 let recaptchaError = document.getElementById("recaptcha-error");
 
 function sendMail() {
+  // CERVICE_ID, TEMPLETE_ID - get from email.js
   const CERVICE_ID = "service_6g4b9sf";
   const TEMPLETE_ID = "template_fnlcymh";
   let captcha = grecaptcha.getResponse();

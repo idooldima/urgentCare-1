@@ -9,6 +9,7 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script type="text/javascript">
       var onloadCallback = function () {
+        // Site key
         grecaptcha.render("html_element", {
           sitekey: "6LfhNhQkAAAAAKD-Rwd6HtP-l9-r235apUkcbOx-",
         });
@@ -20,7 +21,9 @@
     ></script>
     <script type="text/javascript">
       (function () {
-        emailjs.init("user_jOur6AseerULiyKhFnWBs");
+        // PABLIC_KEY - get from email.js
+        const PABLIC_KEY = "user_jOur6AseerULiyKhFnWBs";
+        emailjs.init(PABLIC_KEY);
       })();
     </script>
     <!-- <script type="text/javascript">
@@ -187,6 +190,7 @@
                 <button class="button">Browse</button>
               </div>
             </div> -->
+            <!-- Site key -->
             <div
               id="recaptcha"
               class="g-recaptcha"
